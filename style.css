@@ -99,3 +99,40 @@ h2{
 }
 
 
+@media (max-width: 768px){
+
+    body{
+        display: table;
+    }
+
+    body::before, body::after{
+        content: ' ';
+        display: table;
+        clear: both;
+
+    }
+
+    #shuffle{
+        width: 80%;
+    }
+    
+    h2{
+        display: block;
+        width: 80%;
+    }
+
+    img{
+        display: block;
+    }
+    .cup{
+        width: 30%;   
+        float: left;
+        position: relative;
+        z-index: 2;
+    }
+    #container{
+        margin: 250px auto 50px auto;
+        position: relative;
+    }
+ 
+}

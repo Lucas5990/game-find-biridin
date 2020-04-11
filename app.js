@@ -43,6 +43,9 @@ function raiseCup(){
         auScream.play();
         document.querySelector('#shuffle').classList.remove('hide');
         document.querySelector('h2').classList.add('hide');
+        document.querySelectorAll('.cup').forEach( (cup) => {
+            cup.removeEventListener('click', raiseCup);
+        });
     } else{
         document.querySelector('h2').innerText = 'Você perdeu !';
         document.querySelectorAll('.cup').forEach( (cup) => {
