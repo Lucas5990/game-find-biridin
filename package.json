@@ -1,0 +1,24 @@
+{
+  "name": "games-find-biridin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "animejs": "^3.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucas5990/games-find-biridin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucas5990/games-find-biridin/issues"
+  },
+  "homepage": "https://github.com/Lucas5990/games-find-biridin#readme"
+}

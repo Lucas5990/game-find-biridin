@@ -1,0 +1,101 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background: rgb(40,40,40);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+    margin: 250px auto 100px auto;
+    width: 600px;
+    position: relative;
+}
+
+#container::after, #container::before{
+    display: table;
+    content: ' ';
+    clear: both;
+}
+
+#container img{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+}
+
+h2{
+    margin: 0 auto;
+    color: wheat;
+    border: 3px solid tomato;
+    padding: 20px;
+    width: 20%;
+    display: block;
+    text-align: center;
+}
+
+
+#shuffle{
+    padding: 20px;
+    font-size: 1.5em;
+    background: ;
+    color: wheat;
+    border: 2px solid tomato;
+    margin: 0 auto;
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#shuffle:active, #shuffle:hover {
+    background: tomato;
+}
+
+#shuffle:focus{
+    outline: none;
+}
+
+
+/* Icons */
+
+
+.cup{
+    width: 200px;   
+    float: left;
+    position: relative;
+    z-index: 2;
+}
+
+.michael-jackson{
+    width: 100px;
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.show{
+    visibility: visible;
+}
+
+#mj-1{
+    left: 60px;
+}
+#mj-2{
+    left: 250px;
+}
+#mj-3{
+    left: 450px;
+}
+
+
+.cup:hover{
+    background: rgb(178,55,37);
+    cursor: pointer;
+}
+
+
