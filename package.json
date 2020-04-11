@@ -2,7 +2,7 @@
   "name": "games-find-biridin",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.html",
   "dependencies": {
     "animejs": "^3.2.0"
   },
