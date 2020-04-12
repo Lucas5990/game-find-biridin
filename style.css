@@ -8,13 +8,13 @@
 
 #name{
     display: block;
-    margin: 100px auto;
+    margin: 60px auto;
     text-align: center;
     font-size: 5em;
 }
 
 #container{
-    margin: 0 auto 100px auto;
+    margin: 0 auto 60px auto;
     width: 600px;
     position: relative;
 }
@@ -75,7 +75,7 @@
 
 /* MENU */
 h2{
-    margin: 0 auto 100px auto;
+    margin: 0 auto 60px auto;
     color: black;
     border: 2px solid rgb(178,55,37);
     padding: 20px;
@@ -110,6 +110,12 @@ h2{
 .disabled{
     pointer-events: none;
     background: tomato !important;
+}
+
+/* MUSIC */
+#music audio{
+    display: block;
+    margin: 0 auto 60px auto;
 }
 
 
@@ -166,6 +172,10 @@ h2{
 
     p{
         font-size: 1.2em;
+    }
+
+    #music audio{
+        margin: 30px auto;
     }
  
 }

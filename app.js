@@ -29,6 +29,17 @@ let cup3 = {
 let cup_list = [cup1, cup2, cup3];
 
 
+function parse_str(str) {
+    return str.split('&').reduce(function(params, param) {
+        var paramSplit = param.split('=').map(function(value) {
+            return decodeURIComponent(value.replace('+', ' '));
+        });
+        params[paramSplit[0]] = paramSplit[1];
+        return params;
+    }, {});
+}
+
+
 function raiseCup(){
     mj_list[cup2.currentPosition -1].classList.remove('hide');
     anime({
