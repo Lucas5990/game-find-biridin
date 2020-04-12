@@ -1,6 +1,7 @@
 import anime from './node_modules/animejs/lib/anime.es.js';
 let auScream = new Audio('./au.mp3');
 let points = 0;
+let animationDuration = 500;
 let score = document.querySelector('h2');
 let shuffleButton = document.querySelector('#shuffle');
 let mj_list = document.querySelectorAll('.michael-jackson')
@@ -81,11 +82,19 @@ document.querySelector('#shuffle').addEventListener('click',() => {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
+    if(points % 2 === 0 && animationDuration > 100){
+        animationDuration -= 50
+    }
+
+    console.log(points);
+    console.log(animationDuration);
+
     var game = setInterval(() => {
         let one = randCup(1,3);
         let two = randCup(1,3);
+        
         moveTwoCups(one, two);
-    },1000);
+    },animationDuration + 500);
 
     setTimeout(() => {
         clearInterval(game);
@@ -122,13 +131,15 @@ function moveTwoCups(cup1, cup2){
     }
     if(cup1 == cup2){
         return;
-    } 
+    }
+    
+    
     anime({
         targets: element1.element,
         keyframes: [
             {translateX: [cup1_translation]},
         ],
-        duration: 500,
+        duration: animationDuration,
         easing: 'easeInOutExpo',
         autoplay: true,
     });
@@ -137,7 +148,7 @@ function moveTwoCups(cup1, cup2){
         keyframes: [
             {translateX: [cup2_translation]},
         ],
-        duration: 500,
+        duration: animationDuration,
         easing: 'easeInOutExpo',
         autoplay: true,
 
@@ -231,16 +242,6 @@ function moveTwoCups(cup1, cup2){
         }
     }
     
-    console.clear();
-    console.log(cup1);
-    console.log(cup2);
-    console.log(cup_list[0]);
-    console.log(cup_list[1]);
-    console.log(cup_list[2]);
-
-
-
-
 }
 
 let initial_animation = anime({
