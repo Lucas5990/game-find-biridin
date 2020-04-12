@@ -1,6 +1,8 @@
 import anime from './node_modules/animejs/lib/anime.es.js';
 let auScream = new Audio('./au.mp3');
-
+let points = 0;
+let score = document.querySelector('h2');
+let shuffleButton = document.querySelector('#shuffle');
 let mj_list = document.querySelectorAll('.michael-jackson')
 let cup1 = {
     name: 'cup1',
@@ -41,13 +43,19 @@ function raiseCup(){
 
     if(this.id === 'cup-2'){
         auScream.play();
+        points+= 1;
+        score.innerHTML = `Pontuação: ${points}`;     
         document.querySelector('#shuffle').classList.remove('hide');
-        document.querySelector('h2').classList.add('hide');
+    
         document.querySelectorAll('.cup').forEach( (cup) => {
             cup.removeEventListener('click', raiseCup);
         });
+
+
+        shuffleButton.classList.remove('disabled');
+        shuffleButton.innerHTML = "Jogar";
     } else{
-        document.querySelector('h2').innerText = 'Você perdeu !';
+        shuffleButton.innerText = 'Você perdeu !';
         document.querySelectorAll('.cup').forEach( (cup) => {
             cup.removeEventListener('click', raiseCup);
         });
@@ -58,15 +66,15 @@ function raiseCup(){
 
 document.querySelector('#shuffle').addEventListener('click',() => {
 
+    shuffleButton.innerHTML = 'Aguarde...';
+    shuffleButton.classList.add('disabled');
     document.querySelectorAll('.cup').forEach( (cup) => {
         cup.removeEventListener('click', raiseCup);
     });
 
-    document.querySelector('#shuffle').classList.add('hide');
     mj_list.forEach((mj) => {
         mj.classList.add('hide');
     });
-    // setTimeout(moveTwoCups(cup1,cup2), 3000);
     
 
     function randCup(min, max) { // min and max included 
@@ -81,8 +89,7 @@ document.querySelector('#shuffle').addEventListener('click',() => {
 
     setTimeout(() => {
         clearInterval(game);
-        console.log('parou');
-        document.querySelector('h2').classList.remove('hide');
+        shuffleButton.innerHTML = 'Escolha !'
         document.querySelectorAll('.cup').forEach( (cup) => {
             cup.addEventListener('click', raiseCup);
         });

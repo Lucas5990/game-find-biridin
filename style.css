@@ -2,12 +2,19 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background: rgb(40,40,40);
+    background: rgb(163, 213, 224);
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#name{
+    display: block;
+    margin: 100px auto;
+    text-align: center;
+    font-size: 5em;
+}
+
 #container{
-    margin: 250px auto 100px auto;
+    margin: 0 auto 100px auto;
     width: 600px;
     position: relative;
 }
@@ -24,37 +31,6 @@
     display: block;
 }
 
-h2{
-    margin: 0 auto;
-    color: wheat;
-    border: 3px solid tomato;
-    padding: 20px;
-    width: 20%;
-    display: block;
-    text-align: center;
-}
-
-
-#shuffle{
-    padding: 20px;
-    font-size: 1.5em;
-    background: ;
-    color: wheat;
-    border: 2px solid tomato;
-    margin: 0 auto;
-    display: block;
-    width: 20%;
-    margin: 0 auto;
-    cursor: pointer;
-}
-
-#shuffle:active, #shuffle:hover {
-    background: tomato;
-}
-
-#shuffle:focus{
-    outline: none;
-}
 
 
 /* Icons */
@@ -75,7 +51,7 @@ h2{
 }
 
 .hide{
-    visibility: hidden;
+    visibility: hidden; 
 }
 
 .show{
@@ -94,10 +70,59 @@ h2{
 
 
 .cup:hover{
-    background: rgb(178,55,37);
     cursor: pointer;
 }
 
+/* MENU */
+h2{
+    margin: 0 auto 100px auto;
+    color: black;
+    border: 2px solid rgb(178,55,37);
+    padding: 20px;
+    width: 20%;
+    display: block;
+    text-align: center;
+}
+
+
+#shuffle{
+    padding: 20px;
+    font-size: 1.5em;
+    background: ;
+    color: white;
+    border: none;
+    background: rgb(178,55,37);
+    margin: 0 auto;
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#shuffle:active, #shuffle:hover {
+    background: tomato;
+}
+
+#shuffle:focus{
+    outline: none;
+}
+
+.disabled{
+    pointer-events: none;
+    background: tomato !important;
+}
+
+
+/* FOOTER */
+#footer{
+    text-align: center;
+    font-weight: bold;
+}
+
+#footer a{
+    text-decoration: none;
+    color: rgb(178,55,37);
+}
 
 @media (max-width: 768px){
 
@@ -112,6 +137,9 @@ h2{
 
     }
 
+    #container{
+        margin: 30px 0 30px 0 !important;
+    }
     #shuffle{
         width: 80%;
     }
@@ -119,6 +147,7 @@ h2{
     h2{
         display: block;
         width: 80%;
+        margin-bottom: 30px;
     }
 
     img{
@@ -133,6 +162,10 @@ h2{
     #container{
         margin: 250px auto 50px auto;
         position: relative;
+    }
+
+    p{
+        font-size: 1.2em;
     }
  
 }
